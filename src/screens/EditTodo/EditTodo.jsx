@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import axios from "axios";
 
-function EditTodo({state, tit, desc, id}) {
+function EditTodo({state, tit, desc, id, deadline}) {
     const [title,setTitle]=useState(tit)
     const [description,setDescription]=useState(desc)
+    const [dead,setDead]=useState(deadline)
 
     const handleSubmit = async(e) =>{
       console.log(id);
@@ -50,6 +51,12 @@ function EditTodo({state, tit, desc, id}) {
               Task Description
             </label>
             <textarea className="form-control" onChange={(e)=>setDescription(e.target.value)}>{description}</textarea>
+          </div>
+          <div className="my-3">
+            <label htmlFor="" className="form-label">
+              Task Deadline
+            </label>
+            <input type="date" className="form-control" value={dead} onChange={(e)=>setDead(e.target.value)} />
           </div>
           <div className="d-flex justify-content-end">
           <button className="btn add-btn" onClick={handleSubmit}>Edit</button>

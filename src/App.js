@@ -1,13 +1,14 @@
-import logo from './logo.svg';
+import {BrowserRouter as Router } from 'react-router-dom'
 import './App.css';
-import TodoList from './screens/TodoList/TodoList';
-
+import AllRoutes from './AllRoutes';
 
 function App() {
   return (
-   <>
-    <TodoList />
-   </>
+    <div>
+      <Router>
+        <AllRoutes />
+      </Router>
+    </div>
   );
 }
 
