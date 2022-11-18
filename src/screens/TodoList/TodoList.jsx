@@ -22,8 +22,8 @@ function TodoList() {
     }
     useEffect(()=>{
       setTodos(JSON.parse(localStorage.getItem("todos")))
-      getTodo()
-    },[])
+      // getTodo()
+    },[todos])
 
    
 

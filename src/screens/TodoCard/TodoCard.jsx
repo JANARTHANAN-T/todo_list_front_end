@@ -9,12 +9,13 @@ function TodoCard({title,desc, id, etitle, edesc, edit, eid, edeadline, index, d
         edeadline(deadline)
         edit(false)
         eid(id)
+        console.log(id);
+        
         setTimeout(
             edit(true),
             3000
         )
     }
-
     const handleDelete = async() =>{
         await axios({
             method: 'get',

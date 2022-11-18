@@ -5,13 +5,12 @@ function EditTodo({state, tit, desc, id, deadline}) {
     const [title,setTitle]=useState(tit)
     const [description,setDescription]=useState(desc)
     const [dead,setDead]=useState(deadline)
-
     const handleSubmit = async(e) =>{
       console.log(id);
         e.preventDefault()
         try{
           console.log(id);
-        const {data}=await axios.post(`http://localhost:4000/edit/${id}`,{title,description})
+        const {data}=await axios.post(`http://localhost:4000/edit/${id}`,{title,description,deadline:dead})
         localStorage.setItem("todos", JSON.stringify(data));
         state(false)
         
